@@ -12,5 +12,5 @@ themeButton.addEventListener('click', function() {
 mainActionButton.addEventListener('click', function() {
     // Вместо старого спиннера просто перенаправляем человека по ссылке
     // Например, на твой личный ТГ аккаунт для связи:
-    window.open('https://t.me/@kuku_k_k', '_blank');
+    window.open('https://t.me/kuku_k_k', '_blank');
 });
