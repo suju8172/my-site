@@ -1,0 +1,186 @@
+/* Настройки для всей страницы */
+body {
+    background-color: #e6fffa; /* Твой любимый нежно-бирюзовый фон */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Красивый современный шрифт */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Белая карточка по центру, в которой лежит весь контент */
+main {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px; /* Скругление углов карточки */
+    box-shadow: 0 10px 25px rgba(0, 164, 180, 0.15); /* Мягкая бирюзовая тень */
+    max-width: 450px;
+    text-align: center;
+}
+
+/* Стили для надписи курса */
+.subtitle {
+    color: #00a4b4; /* Насыщенный бирюзовый */
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase; /* Все буквы заглавные */
+    letter-spacing: 1px; /* Расстояние между буквами */
+    margin-bottom: 10px;
+}
+
+/* Главный заголовок */
+h1 {
+    color: #2d3748; /* Темно-серый, почти черный */
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Описание */
+.description {
+    color: #718096; /* Серый цвет для второстепенного текста */
+    font-size: 16px;
+    line-height: 1.5; /* Расстояние между строками */
+    margin-bottom: 20px;
+}
+
+/* Картинка с дисками */
+img {
+    max-width: 100%; /* Картинка никогда не вылезет за пределы белой карточки */
+    height: auto;
+    border-radius: 12px; /* Мягкие углы у картинки */
+    margin-bottom: 25px;
+}
+
+/* Кнопка */
+button {
+    background-color: #00a4b4;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px; /* Полностью круглая кнопка */
+    cursor: pointer; /* Курсор меняется на палец при наведении */
+    transition: all 0.3s ease; /* Наша плавная анимация! */
+}
+
+/* Эффект при наведении мышки на кнопку */
+button:hover {
+    background-color: #007a87; /* Кнопка плавно темнеет */
+    transform: translateY(-2px); /* Кнопка слегка приподнимается вверх */
+}
+h1 {
+    color: rgb(107, 131, 211);
+}
+/* Стиль кнопки в момент, когда она занята загрузкой */
+button.busy {
+    background-color: #a0aec0 !important; /* Делаем серой */
+    transform: scale(0.95); /* Кнопка слегка сжимается, показывая нажатие */
+    pointer-events: none; /* Запрещаем кликать по ней, пока идет таймер */
+}
+/* 1. Создаем сам круглый элемент спиннера */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3); /* Прозрачная белая рамка со всех сторон */
+    border-top-color: white; /* Делаем верхнюю грань чисто белой, чтобы получился "наушник" */
+    border-radius: 50%; /* Превращаем квадрат в идеальный круг */
+    margin: 0 auto; /* Выравниваем строго по центру кнопки */
+    
+    /* Включаем анимацию: название "spin", крутить 0.8 секунды, линейно (равномерно), бесконечно (infinite) */
+    animation: spin 0.8s linear infinite; 
+}
+
+/* 2. Описываем саму покадровую анимацию вращения */
+@keyframes spin {
+    to {
+        transform: rotate(360deg); /* Крутим элемент до победного конца (на 360 градусов) */
+    }
+}
+/* Переключаем фон всей страницы */
+body.dark-theme {/* ... твои старые стили ... */
+    transition: background-color 0.4s ease, color 0.4s ease;
+    background-color: #1a202c;
+}
+
+/* Переключаем фон нашей белой карточки */
+body.dark-theme main {/* ... твои старые стили ... */
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    background-color: #2d3748;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Переключаем цвет главного заголовка */
+body.dark-theme h1 {
+    color: #ffffff;
+}
+
+/* Переключаем цвет описания */
+body.dark-theme .description {
+    color: #a0aec0;
+}/* Контейнер для ссылок */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Расстояние между ссылками внутри коробки */
+    margin-bottom: 25px; /* Отступ снизу, чтобы не прилипать к главной кнопке */
+}
+
+/* Сами ссылки-теги <a> */
+.social-links a {
+    color: #00a4b4;
+    text-decoration: none; /* Убираем уродливое стандартное подчеркивание */
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: 2px solid #00a4b4; /* Бирюзовая рамка вокруг ссылки */
+    border-radius: 8px; /* Скругление углов рамки */
+    transition: all 0.3s ease; /* Плавность для эффектов */
+}
+
+/* Эффект при наведении на ссылку */
+.social-links a:hover {
+    background-color: #00a4b4; /* Заливаем фон бирюзовым */
+    color: white; /* Текст внутри ссылки делаем белым */
+}
+/* Кнопка смены темы в углу экрана */
+.theme-toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent; /* Делаем фон кнопки прозрачным */
+    border: 2px solid #00a4b4;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50px; /* Делаем кнопку идеально круглой */
+    line-height: 1;
+    transition: transform 0.3s ease, background-color 0.4s ease;
+    z-index: 10; /* Чтобы кнопка всегда была поверх остальных элементов */
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1); /* Слегка увеличиваем при наведении */
+    background-color: rgba(0, 164, 180, 0.1); /* Легкий бирюзовый отсвет */
+}
+
+/* На всякий случай проверяем, что у главной кнопки правильный ID */
+#mainActionBtn {
+    /* Все старые стили твоей большой кнопки автоматически применятся */
+}
+/* Включаем режим магии для маленьких экранов */
+@media (max-width: 480px) {
+    body {
+        padding: 15px; /* Добавляем зазор вокруг карточки, чтобы она не прилипала к краям экрана */
+    }
+
+    main {
+        padding: 20px; /* Уменьшаем внутренние отступы белой карточки, освобождая место для текста */
+    }
+
+    h1 {
+        font-size: 20px; /* Слегка уменьшаем главный заголовок, чтобы он не выглядел гигантским */
+    }
+}
