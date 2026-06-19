@@ -255,4 +255,19 @@ body {
     box-shadow: 0 6px 20px rgba(163, 184, 153, 0.4) !important;
     /* Кнопка чуть-чуть увеличивается, давая отзыв на клик */
     transform: scale(1.03);
+}/* МЕДИАЗАПРОС: включается только на экранах меньше 768px (смартфоны) */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr !important; /* Схлопываем сетку в одну колонку */
+        gap: 15px; /* Делаем отступы между карточками чуть компактнее для мобилы */
+        padding: 10px;
+    }
+
+    .card h2, .card h1 {
+        font-size: 32px !important; /* Уменьшаем заголовки, чтобы они не вылезали за края */
+    }
+    
+    .profile-img-hero, .profile-img-about {
+        max-height: 200px; /* Ограничиваем высоту фоток на мобилках */
+    }
 }
