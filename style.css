@@ -186,4 +186,26 @@ footer {
 }/* Прячем квадрат с вопросом, если картинка не загрузилась */
 img:not([src]), img[src=""] {
     opacity: 0;
+}/* Превращаем чудище в стильную лесную ссылку */
+.back-link {
+    display: inline-block;
+    color: #a3b899; /* Наш фирменный светлый лесной цвет */
+    text-decoration: none; /* Убираем это уродливое подчеркивание */
+    font-family: 'Bebas Neue', sans-serif; /* Тот же крутой шрифт, что и на главной */
+    font-size: 24px;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border: 1px solid rgba(163, 184, 153, 0.2);
+    border-radius: 8px;
+    background-color: #151d16; /* Темный фон как у карточек */
+    transition: all 0.3s ease;
+    margin: 20px; /* Чтобы не липла к краям экрана */
+}
+
+/* Эффект при наведении */
+.back-link:hover {
+    color: #f0eae1; /* Текст становится кремовым */
+    border-color: #a3b899; /* Бордюр загорается */
+    box-shadow: 0 4px 15px rgba(163, 184, 153, 0.3); /* Мягкое свечение */
+    transform: translateX(-3px); /* Ссылка чуть сдвигается влево, показывая направление назад */
 }
