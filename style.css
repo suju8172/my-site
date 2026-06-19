@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #0b0f0c; /* Ультра-темный лесной фон */
+    background-color: #3a5341; /* Ультра-темный лесной фон */
     color: #e2e8f0;
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
@@ -27,7 +27,7 @@ body {
 
 /* Общий стиль для ВСЕХ карточек */
 .card {
-    background-color: #121814; /* Темно-серый с легким зеленым отливом */
+    background-color: #1d2721; /* Темно-серый с легким зеленым отливом */
     border: 1px solid #1f2922; /* Тонкая лесная рамка */
     border-radius: 16px;
     padding: 30px;
@@ -97,7 +97,7 @@ body {
 }
 
 .case-card {
-    background-color: #17241b; /* Глубокий темно-зеленый для кейса */
+    background-color: #293b2e; /* Глубокий темно-зеленый для кейса */
 }
 
 /* Списки и кнопки */
@@ -148,7 +148,7 @@ body {
 .main-footer {
     margin-top: 50px;
     font-size: 12px;
-    color: #445247;
+    color: #0a0c0b;
 }
 
 /* Адаптив под мобилки: если экран узкий, все карточки встают в один ряд */
@@ -162,4 +162,30 @@ body {
     .hero-card h1 {
         font-size: 50px;
     }
+}/* Стили для верхней панели навигации */
+.nav-bar {
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.back-link {
+    color: #a3b899;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #ffffff;
+}
+
+/* Специфический класс для обычного заголовка, чтобы он не был слишком огромным */
+.standard-hero {
+    min-height: auto !important;
+    padding: 40px 30px !important;
 }
