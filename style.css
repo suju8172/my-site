@@ -188,4 +188,71 @@ body {
 .standard-hero {
     min-height: auto !important;
     padding: 40px 30px !important;
+}/* Шаг 1: Говорим карточкам плавно реагировать на любые изменения */
+.card {
+    /* Твой старый код карточки (background, padding и т.д.) остаётся как был */
+    
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                border-color 0.3s ease;
+    will-change: transform, box-shadow;
+}
+
+/* Шаг 2: Магия при наведении мышки */
+.card:hover {
+    transform: translateY(-5px); /* Карточка мягко приподнимается вверх на 5 пикселей */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Тень становится глубже и мягче */
+    border-color: #a3b899; /* Бордюр карточки начинает слегка подсвечиваться нашим лесным цветом */
+}.link-card:hover h3 {
+    color: #a3b899; /* Заголовок меняет цвет */
+}/* МЫ ВЫДЕЛЯЕМ ЭТУ КАРТОЧКУ */
+.portfolio-grid .case-card {
+    /* 1. Делаем фон карточки светлее (темно-лесной цвет) */
+    background-color: #2a412b !important; 
+    
+    /* 2. Добавляем мягкое свечение (glow) вокруг */
+    box-shadow: 0 10px 30px rgba(163, 184, 153, 0.4); 
+    
+    /* 3. Делаем тонкий светлый бордюр */
+    border: 1px solid #a3b899; 
+    
+    /* 4. Немного увеличим тень для объема */
+    margin-bottom: 5px; 
+}
+
+/* 5. Делаем ТЕКСТ внутри этой карточки ярче (кремовый) */
+.case-card h3,
+.case-card p,
+.case-card span {
+    color: #f0eae1 !important; 
+}
+
+/* 6. Анимация при наведении именно на неё */
+.case-card:hover {
+    transform: translateY(-5px); /* Приподнимаем */
+    box-shadow: 0 20px 40px rgba(163, 184, 153, 0.6); /* Свечение усиливается */
+    border-color: #ffffff; /* Бордюр становится белым */
+}/* Выделяем кнопки в контактах в обычном состоянии */
+.contacts-buttons .btn, 
+.contacts-card a, 
+.card a[href*="t.me"], 
+.card a[href*="github"] {
+    /* Тонкая лесная граница вокруг кнопок */
+    border: 1px solid rgba(163, 184, 153, 0.4) !important;
+    /* Едва заметное, мягкое зеленоватое свечение */
+    box-shadow: 0 4px 15px rgba(163, 184, 153, 0.15);
+    transition: all 0.3s ease !important;
+}
+
+/* Эффект при наведении на кнопки */
+.contacts-buttons .btn:hover, 
+.contacts-card a:hover,
+.card a[href*="t.me"]:hover, 
+.card a[href*="github"]:hover {
+    /* При наведении бордюр загорается ярче */
+    border-color: rgba(163, 184, 153, 0.9) !important;
+    /* Свечение под кнопкой становится плотнее */
+    box-shadow: 0 6px 20px rgba(163, 184, 153, 0.4) !important;
+    /* Кнопка чуть-чуть увеличивается, давая отзыв на клик */
+    transform: scale(1.03);
 }
