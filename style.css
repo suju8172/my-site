@@ -20,8 +20,8 @@ body {
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 колонки */
-    gap: 20px;
-    max-width: 900px;
+    gap: 25px; /* Чуть увеличили расстояние между карточками */
+    max-width: 1200px; /* Увеличили максимальную ширину сайта на ПК */
     width: 100%;
 }
 
@@ -39,7 +39,7 @@ body {
 /* Заголовки в стиле Bebas Neue (крупные, журнальные) */
 .card h2, .card h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 42px;
+    font-size: 48px; /* Было 42px — сделали крупнее и заметнее */
     letter-spacing: 2px;
     line-height: 1;
     margin-bottom: 15px;
