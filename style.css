@@ -183,4 +183,7 @@ footer {
         border: 1px solid rgba(163, 184, 153, 0.5) !important;
         box-shadow: 0 4px 12px rgba(163, 184, 153, 0.25) !important;
     }
+}/* Прячем квадрат с вопросом, если картинка не загрузилась */
+img:not([src]), img[src=""] {
+    opacity: 0;
 }
