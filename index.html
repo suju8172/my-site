@@ -3,26 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой первый спец проект</title>
+    <title>SUJU // Digital Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-       <button class="theme-toggle-btn" id="themeBtn">🌓</button>
-    <main>
-        <p class="subtitle">Курс: Технологический PR в РГСУ</p>
-        <h1>Привет! Я будущий топ-пиарщик и разработчик</h1>
-        <p class="description">Это мой самый первый сайт, созданный с нуля. Скоро здесь будет мое крутое портфолио для крупных брендов.</p>
-        
-        <img src="https://i.pinimg.com/736x/6a/4d/f0/6a4df0ef6f36d203858a68693cbe34ef.jpg" alt="Крутой 3D дизайн">
-        
-        <div class="social-links">
-            <a href="https://t.me/+SBsi3uKydzBkZmMy" target="_blank">Telegram</a>
-            <a href="https://github.com/suju8172" target="_blank">GitHub</a>
-        </div>
-        
-        <button id="mainActionBtn">Связаться со мной</button>
-    </main>
 
-    <script src="script.js"></script>
+    <div class="portfolio-grid">
+        
+        <header class="card hero-card">
+            <div class="hero-content">
+                <span class="tag">tg: @your_channel</span>
+                <h1>PORTFOLIO</h1>
+                <h2 class="handwritten">Suju</h2>
+            </div>
+            <div class="card-bg-stub">[ МЕСТО ДЛЯ ТВОЕЙ ФОТКИ В КЕПКЕ ]</div>
+        </header>
+
+        <section class="card about-card">
+            <h2>ABOUT ME</h2>
+            <p class="description">PR-специалист и фронтенд-разработчик. Делаю продукты визуально дороже.</p>
+            <div class="mini-photo-stub">[ ТВОЕ ВЕРТИКАЛЬНОЕ ФОТО ]</div>
+        </section>
+
+        <section class="card skills-card">
+            <h2>I CREATE</h2>
+            <ul class="skills-list">
+                <li><span>//</span> PR & DIGITAL</li>
+                <li><span>//</span> FRONT-END DEV</li>
+                <li><span>//</span> UI/UX DESIGN</li>
+            </ul>
+        </section>
+
+        <a href="https://t.me/+SBsi3uKydzBkZmMy" target="_blank" class="card case-card link-card">
+            <span class="case-tag">WEBSITE</span>
+            <h3>THE CASE</h3>
+            <p>Мой Telegram-канал. Весь лайв, проекты и мысли туда.</p>
+            <div class="action-arrow">→</div>
+        </a>
+
+        <section class="card contact-card">
+            <h2>CONTACTS</h2>
+            <p>Приступим к работе над вашим проектом уже сегодня.</p>
+            <div class="links-group">
+                <a href="https://t.me/kuku_k_k" target="_blank" class="btn">Написать в ЛС</a>
+                <a href="https://github.com/suju8172" target="_blank" class="btn">GitHub</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="main-footer">
+        <p>© 2026 SUJU. Все права защищены.</p>
+    </footer>
+
 </body>
 </html>
