@@ -1,273 +1,186 @@
-/* Базовые сбросы */
+/* Общие настройки стиля */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    background-color: #3a5341; /* Ультра-темный лесной фон */
-    color: #e2e8f0;
-    font-family: 'Inter', sans-serif;
-    min-height: 100vh;
+    background-color: #1b261c; /* Глубокий темно-зеленый */
+    font-family: 'Montserrat', sans-serif;
+    color: #e3ede4;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: min-content;
+    min-height: 100vh;
     padding: 40px 20px;
 }
 
-/* Сетка Grid как на референсе */
+/* Сетка сайта на больших экранах (ПК) */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
-    gap: 25px; /* Чуть увеличили расстояние между карточками */
-    max-width: 1200px; /* Увеличили максимальную ширину сайта на ПК */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1200px;
     width: 100%;
 }
 
-/* Общий стиль для ВСЕХ карточек */
-.card {
-    background-color: #1d2721; /* Темно-серый с легким зеленым отливом */
-    border: 1px solid #1f2922; /* Тонкая лесная рамка */
-    border-radius: 16px;
-    padding: 30px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* Заголовки в стиле Bebas Neue (крупные, журнальные) */
-.card h2, .card h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 48px; /* Было 42px — сделали крупнее и заметнее */
-    letter-spacing: 2px;
-    line-height: 1;
-    margin-bottom: 15px;
-}
-
-/* БОЛЬШАЯ КАРТОЧКА (HERO) — растягиваем на две колонки */
+/* Главная карточка занимает всю ширину (2 колонки) */
 .hero-card {
     grid-column: span 2;
-    background-color: #1b3222; /* Тот самый цвет темного дуба / канабиса */
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-color: #2c4c35;
 }
 
-.hero-card h1 {
-    font-size: 80px;
-    color: #ffffff;
-}
-
-/* Имитация рукописного текста поверх (пока просто стильный курсив) */
-.handwritten {
-    font-style: italic;
-    font-family: serif;
-    font-size: 36px;
-    color: #a3b899;
-    text-transform: none;
-    margin-top: -10px;
-}
-
-/* Технические заглушки для будущих картинок */
-.card-bg-stub, .mini-photo-stub {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px dashed #2c4c35;
-    padding: 20px;
-    text-align: center;
-    font-size: 12px;
-    color: #627d69;
-    margin-top: 15px;
-    border-radius: 8px;
-}
-
-/* Карточка-ссылка (Кейс) */
-.link-card {
+/* Базовый стиль всех карточек */
+.card {
+    background-color: #151d16;
+    border: 1px solid rgba(163, 184, 153, 0.1);
+    border-radius: 16px;
+    padding: 30px;
     text-decoration: none;
     color: inherit;
-    transition: all 0.3s ease;
-}
-
-/* Эффект наведения в лесной стилистике */
-.link-card:hover {
-    border-color: #a3b899;
-    transform: translateY(-4px);
-}
-
-.case-card {
-    background-color: #293b2e; /* Глубокий темно-зеленый для кейса */
-}
-
-/* Списки и кнопки */
-.skills-list {
-    list-style: none;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 2;
-}
-
-.skills-list span {
-    color: #a3b899;
-}
-
-.links-group {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: #1b3222;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: background 0.2s;
-}
-
-.btn:hover {
-    background-color: #2c4c35;
-}
-
-/* Теги сверху карточек */
-.tag, .case-tag {
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #627d69;
-    letter-spacing: 1px;
-    display: block;
-    margin-bottom: 10px;
-}
-
-/* Нижний копирайт */
-.main-footer {
-    margin-top: 50px;
-    font-size: 12px;
-    color: #0a0c0b;
-}
-
-/* Адаптив под мобилки: если экран узкий, все карточки встают в один ряд */
-@media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-    .hero-card {
-        grid-column: span 1;
-    }
-    .hero-card h1 {
-        font-size: 50px;
-    }
-}/* Стили для верхней панели навигации */
-.nav-bar {
-    max-width: 900px;
-    width: 100%;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.back-link {
-    color: #a3b899;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    transition: color 0.2s;
-}
-
-.back-link:hover {
-    color: #ffffff;
-}
-
-/* Специфический класс для обычного заголовка, чтобы он не был слишком огромным */
-.standard-hero {
-    min-height: auto !important;
-    padding: 40px 30px !important;
-}/* Шаг 1: Говорим карточкам плавно реагировать на любые изменения */
-.card {
-    /* Твой старый код карточки (background, padding и т.д.) остаётся как был */
-    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
                 box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
                 border-color 0.3s ease;
     will-change: transform, box-shadow;
 }
 
-/* Шаг 2: Магия при наведении мышки */
+/* Эффект наведения на ПК */
 .card:hover {
-    transform: translateY(-5px); /* Карточка мягко приподнимается вверх на 5 пикселей */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Тень становится глубже и мягче */
-    border-color: #a3b899; /* Бордюр карточки начинает слегка подсвечиваться нашим лесным цветом */
-}.link-card:hover h3 {
-    color: #a3b899; /* Заголовок меняет цвет */
-}/* МЫ ВЫДЕЛЯЕМ ЭТУ КАРТОЧКУ */
-.portfolio-grid .case-card {
-    /* 1. Делаем фон карточки светлее (темно-лесной цвет) */
-    background-color: #2a412b !important; 
-    
-    /* 2. Добавляем мягкое свечение (glow) вокруг */
-    box-shadow: 0 10px 30px rgba(163, 184, 153, 0.4); 
-    
-    /* 3. Делаем тонкий светлый бордюр */
-    border: 1px solid #a3b899; 
-    
-    /* 4. Немного увеличим тень для объема */
-    margin-bottom: 5px; 
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-color: rgba(163, 184, 153, 0.4);
 }
 
-/* 5. Делаем ТЕКСТ внутри этой карточки ярче (кремовый) */
-.case-card h3,
-.case-card p,
-.case-card span {
+/* Шрифты и заголовки */
+.card h1, .card h2, .card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.card h1 { font-size: 72px; }
+.card h2 { font-size: 48px; }
+.card h3 { font-size: 42px; }
+
+.sub-logo {
+    font-size: 36px !important;
+    color: #a3b899;
+    font-style: italic;
+}
+
+.tag {
+    font-size: 12px;
+    color: #697d64;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.skills {
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Картинки внутри блоков */
+.profile-img-hero {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.profile-img-about {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+/* ВЫДЕЛЕННАЯ КАРТОЧКА КЕЙСОВ */
+.portfolio-grid .case-card {
+    background-color: #2a412b !important; 
+    box-shadow: 0 10px 30px rgba(163, 184, 153, 0.3); 
+    border: 1px solid #a3b899; 
+}
+
+.case-card h3, .case-card p {
     color: #f0eae1 !important; 
 }
 
-/* 6. Анимация при наведении именно на неё */
 .case-card:hover {
-    transform: translateY(-5px); /* Приподнимаем */
-    box-shadow: 0 20px 40px rgba(163, 184, 153, 0.6); /* Свечение усиливается */
-    border-color: #ffffff; /* Бордюр становится белым */
-}/* Выделяем кнопки в контактах в обычном состоянии */
-.contacts-buttons .btn, 
-.contacts-card a, 
-.card a[href*="t.me"], 
-.card a[href*="github"] {
-    /* Тонкая лесная граница вокруг кнопок */
-    border: 1px solid rgba(163, 184, 153, 0.4) !important;
-    /* Едва заметное, мягкое зеленоватое свечение */
-    box-shadow: 0 4px 15px rgba(163, 184, 153, 0.15);
+    box-shadow: 0 20px 40px rgba(163, 184, 153, 0.5) !important;
+    border-color: #ffffff;
+}
+
+/* Стили кнопок */
+.contacts-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contacts-buttons .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #1a251b;
+    color: #e3ede4;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid rgba(163, 184, 153, 0.3) !important;
+    box-shadow: 0 4px 15px rgba(163, 184, 153, 0.1);
     transition: all 0.3s ease !important;
 }
 
-/* Эффект при наведении на кнопки */
-.contacts-buttons .btn:hover, 
-.contacts-card a:hover,
-.card a[href*="t.me"]:hover, 
-.card a[href*="github"]:hover {
-    /* При наведении бордюр загорается ярче */
+.contacts-buttons .btn:hover {
     border-color: rgba(163, 184, 153, 0.9) !important;
-    /* Свечение под кнопкой становится плотнее */
     box-shadow: 0 6px 20px rgba(163, 184, 153, 0.4) !important;
-    /* Кнопка чуть-чуть увеличивается, давая отзыв на клик */
     transform: scale(1.03);
-}/* МЕДИАЗАПРОС: включается только на экранах меньше 768px (смартфоны) */
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 12px;
+    color: #556651;
+    text-align: center;
+}
+
+/* АДАПТИВ ДЛЯ ТЕЛЕФОНОВ */
 @media (max-width: 768px) {
     .portfolio-grid {
-        grid-template-columns: 1fr !important; /* Схлопываем сетку в одну колонку */
-        gap: 15px; /* Делаем отступы между карточками чуть компактнее для мобилы */
-        padding: 10px;
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+        padding: 5px;
     }
 
-    .card h2, .card h1 {
-        font-size: 32px !important; /* Уменьшаем заголовки, чтобы они не вылезали за края */
+    .hero-card {
+        grid-column: span 1;
     }
+
+    .card h1 { font-size: 52px; }
+    .card h2 { font-size: 36px; }
+    .card h3 { font-size: 32px; }
     
     .profile-img-hero, .profile-img-about {
-        max-height: 200px; /* Ограничиваем высоту фоток на мобилках */
+        max-height: 200px;
+    }
+
+    /* Свечение на мобилках */
+    .portfolio-grid .case-card {
+        box-shadow: 0 5px 25px rgba(163, 184, 153, 0.4) !important;
+        border: 1px solid rgba(163, 184, 153, 0.7) !important;
+    }
+
+    .contacts-buttons .btn {
+        border: 1px solid rgba(163, 184, 153, 0.5) !important;
+        box-shadow: 0 4px 12px rgba(163, 184, 153, 0.25) !important;
     }
 }
